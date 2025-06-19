@@ -16,7 +16,7 @@ const siteSettings = {
       {
         title: "USDT 에너지 및 실시간 상담",  // 이모지 추가
         desc: "24시간 실시간 상당 및 올인원 봇",
-        cover: "/images/telegram-support.png",
+        cover: "/images/tele-cs.png",
         url: "https://t.me/aquabeta_bot",
         titleClass: "telegram-title",  // 커스텀 클래스
         descClass: "telegram-desc"
@@ -24,7 +24,7 @@ const siteSettings = {
       {
         title: "채널 및 실시간 상담",
         desc: "⚡ 텔레그램 채널",
-        cover: "/images/telegram-channel.png",
+        cover: "/images/tele-tex.png",
         url: "https://t.me/ch_aqua",
         titleClass: "telegram-title",
         descClass: "telegram-desc"
