@@ -1,5 +1,4 @@
 <script setup>
-<div class="carousel-telegram telegram-slide" ...>
 const { locale } = useI18n()
 const translate = useNuxtApp().$i18n.t
 
@@ -9,6 +8,7 @@ const selectedSKU = useState('SelectedSKU', () => { return {} })
 const props = defineProps(['merchant'])
 const merchant = useDataMerchantInfo()
 merchant.value = props.merchant
+
 const siteSettings = {
   carousel: {
     status: "active",
