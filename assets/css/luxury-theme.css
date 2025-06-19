@@ -1,0 +1,58 @@
+/* 어두운 럭셔리 테마 */
+html, body {
+  background: #0d0a08 !important;
+  color: #d4af37 !important;
+}
+
+*, *::before, *::after {
+  background-color: transparent !important;
+}
+
+div, section, main, article {
+  background: #1a1611 !important;
+}
+
+.card, [class*="card"], table, tbody, tr {
+  background: #2d2419 !important;
+  border: 1px solid #8b6914 !important;
+}
+
+td, th {
+  background: #2d2419 !important;
+  color: #ffffff !important;
+  border-color: #8b6914 !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, label, a {
+  color: #ffffff !important;
+}
+
+button, .btn {
+  background: linear-gradient(135deg, #8b6914, #b8860b) !important;
+  color: #ffffff !important;
+  border: 1px solid #8b6914 !important;
+  font-weight: bold !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+button:hover, .btn:hover {
+  background: linear-gradient(135deg, #b8860b, #daa520) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4) !important;
+}
+
+[class*="price"], .price {
+  color: #daa520 !important;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+
+input, textarea, select {
+  background: #2d2419 !important;
+  color: #ffffff !important;
+  border: 1px solid #8b6914 !important;
+}
+
+a:hover {
+  color: #daa520 !important;
+}
