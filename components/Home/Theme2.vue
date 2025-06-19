@@ -1,4 +1,5 @@
 <script setup>
+<div class="carousel-telegram telegram-slide" ...>
 const { locale } = useI18n()
 const translate = useNuxtApp().$i18n.t
 
@@ -13,20 +14,20 @@ const siteSettings = {
     status: "active",
     items: [
       {
-        title: "실시간상담 및 올인원봇",
-        desc: "에너지 구매 및 텔레그램 올인원 봇",
-        cover: "/images/telegram-channel0.jpg",
+        title: "USDT 에너지 및 실시간 상담",  // 이모지 추가
+        desc: "24시간 실시간 상당 및 올인원 봇",
+        cover: "/images/telegram-support.png",
         url: "https://t.me/aquabeta_bot",
-        titleClass: "",
-        descClass: ""
+        titleClass: "telegram-title",  // 커스텀 클래스
+        descClass: "telegram-desc"
       },
       {
-        title: "채널",
-        desc: "24시간 고객 지원", 
-        cover: "/images/telegram-support.jpg",
+        title: "채널 및 실시간 상담",
+        desc: "⚡ 텔레그램 채널",
+        cover: "/images/telegram-channel.png",
         url: "https://t.me/ch_aqua",
-        titleClass: "",
-        descClass: ""
+        titleClass: "telegram-title",
+        descClass: "telegram-desc"
       }
     ]
   }
