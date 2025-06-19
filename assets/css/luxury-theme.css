@@ -125,3 +125,28 @@ a:hover {
 .merchant-intro .contact-info {
   color: #daa520 !important;
 }
+
+/* 캐러셀 이미지 크기 문제 해결 */
+.carousel .relative.h-56,
+[id*="carousel"] .relative.h-56 {
+  height: 400px !important;
+}
+
+.carousel .md\:h-80,
+[id*="carousel"] .md\:h-80 {
+  height: 500px !important;
+}
+
+.carousel img, 
+.carousel figure img,
+[id*="carousel"] img {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.carousel,
+[id*="carousel"] {
+  aspect-ratio: 3/2 !important;
+}
