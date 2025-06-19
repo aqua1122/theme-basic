@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -21,7 +22,10 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxt/image',
   ],
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    '~/assets/css/luxury-theme.css'  // 이 줄만 추가!
+  ],  
   nitro: { // 性能优化
     compressPublicAssets: true,
   },
