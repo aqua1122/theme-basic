@@ -8,7 +8,29 @@ const selectedSKU = useState('SelectedSKU', () => { return {} })
 const props = defineProps(['merchant'])
 const merchant = useDataMerchantInfo()
 merchant.value = props.merchant
-const siteSettings = merchant.value.website ? merchant.value.website.settings : {}
+const siteSettings = {
+  carousel: {
+    status: "active",
+    items: [
+      {
+        title: "실시간상담 및 올인원봇",
+        desc: "에너지 구매 및 텔레그램 올인원 봇",
+        cover: "/images/telegram-channel0.jpg",
+        url: "https://t.me/aquabeta_bot",
+        titleClass: "",
+        descClass: ""
+      },
+      {
+        title: "채널",
+        desc: "24시간 고객 지원", 
+        cover: "/images/telegram-support.jpg",
+        url: "https://t.me/ch_aqua",
+        titleClass: "",
+        descClass: ""
+      }
+    ]
+  }
+}
 const projects = merchant.value.projects
 
 projects.forEach((project) => {
