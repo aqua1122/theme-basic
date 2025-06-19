@@ -85,3 +85,43 @@ a:hover {
 [id*="carousel"] .md\:h-80 {
   height: 400px !important;
 }
+
+/* 상점 소개 모달/팝업 스타일 개선 */
+.modal, .popup, .intro-modal, 
+[class*="modal"], [class*="popup"], [class*="intro"] {
+  background: rgba(13, 10, 8, 0.95) !important;
+}
+
+.modal-box, .popup-content, .intro-content,
+[class*="modal-box"], [class*="popup-content"] {
+  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
+  border: 2px solid #8b6914 !important;
+  border-radius: 16px !important;
+  color: #ffffff !important;
+}
+
+/* 노란색 배경 제거 */
+.bg-yellow-500, .bg-yellow-400, .bg-amber-500, .bg-amber-400,
+[style*="background: yellow"], [style*="background-color: yellow"],
+[style*="background: #fbbf24"], [style*="background: #f59e0b"] {
+  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
+}
+
+/* 상점 정보 카드 스타일 */
+.merchant-intro, .store-intro {
+  background: #2d2419 !important;
+  border: 2px solid #8b6914 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3) !important;
+}
+
+/* 텍스트 색상 */
+.merchant-intro h3, .store-intro h3,
+.merchant-intro p, .store-intro p {
+  color: #ffffff !important;
+}
+
+.merchant-intro .contact-info {
+  color: #daa520 !important;
+}
