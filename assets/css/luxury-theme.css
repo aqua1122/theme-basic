@@ -24,7 +24,8 @@ td, th {
 }
 
 h1, h2, h3, h4, h5, h6, p, span, label, a {
-  color: #ffffff !important;
+  color: #d4af37 !important;  /* 은은한 골드 컬러 */
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important; /* 부드러운 빛 효과 */
 }
 
 button, .btn {
@@ -54,16 +55,23 @@ input, textarea, select {
 }
 
 a:hover {
-  color: #daa520 !important;
+  color: #f0d670 !important;  /* 밝은 골드 */
+  text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
 }
 
 /* 캐러셀 이미지 잘림 방지 */
-.carousel img, 
+.carousel img,
 .carousel figure img,
 [id*="carousel"] img,
 [data-carousel] img {
-  object-fit: contain !important;
-  object-position: center !important;
+  width: auto !important;            /* 가로 자동 조절 */
+  max-width: 90% !important;         /* 최대 가로 크기 제한 */
+  height: auto !important;           /* 세로 자동 조절 */
+  max-height: 90% !important;        /* 최대 세로 크기 제한 */
+  object-fit: contain !important;    /* 이미지 비율 유지하며 컨테이너 안에 맞춤 */
+  object-position: center !important; /* 중앙 정렬 */
+  margin: auto;
+  display: block;
 }
 
 /* 캐러셀 배경 설정 */
@@ -78,12 +86,12 @@ a:hover {
 /* 캐러셀 컨테이너 높이 조정 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
-  height: 300px !important;
+  height: 250px !important;        /* 기존보다 낮춰서 여백 확보 */
 }
 
 .carousel .md\:h-80,
 [id*="carousel"] .md\:h-80 {
-  height: 400px !important;
+  height: 300px !important;
 }
 
 /* 상점 소개 모달/팝업 스타일 개선 */
@@ -119,7 +127,8 @@ a:hover {
 /* 텍스트 색상 */
 .merchant-intro h3, .store-intro h3,
 .merchant-intro p, .store-intro p {
-  color: #ffffff !important;
+  color: #e6d8a8 !important;  /* 부드러운 베이지 골드 톤 */
+  text-shadow: 0 0 4px rgba(230, 216, 168, 0.5) !important;
 }
 
 .merchant-intro .contact-info {
@@ -129,24 +138,25 @@ a:hover {
 /* 캐러셀 이미지 크기 문제 해결 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
-  height: 400px !important;
+  height: 400px !important;        /* 기본 높이 조정 */
 }
 
 .carousel .md\:h-80,
 [id*="carousel"] .md\:h-80 {
-  height: 500px !important;
+  height: 500px !important;        /* 중간 이상 화면 높이 */
 }
 
-.carousel img, 
+.carousel img,
 .carousel figure img,
-[id*="carousel"] img {
-  object-fit: cover !important;
-  object-position: center !important;
-  width: 100% !important;
-  height: 100% !important;
+[id*="carousel"] img,
+[data-carousel] img {
+  width: 100% !important;          /* 가로 꽉 채우기 */
+  height: 100% !important;         /* 세로 꽉 채우기 */
+  object-fit: cover !important;    /* 비율 유지하며 잘라내기 */
+  object-position: center !important; /* 중앙 정렬 */
 }
 
 .carousel,
 [id*="carousel"] {
-  aspect-ratio: 3/2 !important;
+  aspect-ratio: 3 / 2 !important; 
 }
