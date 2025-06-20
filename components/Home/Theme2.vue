@@ -14,7 +14,7 @@ const siteSettings = {
     status: "active",
     items: [
       {
-        title: "USDT 에너지 및 실시간 상담",  // 이모지 추가
+        title: "",  // 이모지 추가
         desc: "24시간 실시간 상당 및 올인원 봇",
         cover: "/resized-telegram-chch.png",
         url: "https://t.me/aquabeta_bot",
@@ -22,8 +22,8 @@ const siteSettings = {
         descClass: "telegram-desc"
       },
       {
-        title: "채널 및 실시간 상담",
-        desc: "⚡ 텔레그램 채널",
+        title: "",
+        desc: "텔레그램 채널",
         cover: "/resized-telegram-ch.png",
         url: "https://t.me/ch_aqua",
         titleClass: "telegram-title",
@@ -190,28 +190,26 @@ onMounted(() => {
 
 <style>
 .project-name {
+.project-name {
   display: -webkit-box;
-  /* 将元素作为弹性伸缩盒子展示 */
   -webkit-line-clamp: 1;
-  /* 限制文本行数为 1 行 */
   -webkit-box-orient: vertical;
-  /* 设置伸缩盒子为垂直方向 */
   overflow: hidden;
-  /* 隐藏溢出文本 */
   text-overflow: ellipsis;
-  /* 使用省略号截断溢出文本 */
+  font-weight: 600;          /* 글자 굵기 추가 */
+  font-size: 1.1rem;         /* 약간 큰 글자 크기 */
+  line-height: 1.3;          /* 줄 간격 조절 */
+  color: #333;               /* 필요하면 텍스트 색상 조정 */
 }
 
 .sku-name {
   display: -webkit-box;
-  /* 将元素作为弹性伸缩盒子展示 */
   -webkit-line-clamp: 2;
-  /* 限制文本行数为 2 行 */
   -webkit-box-orient: vertical;
-  /* 设置伸缩盒子为垂直方向 */
   overflow: hidden;
-  /* 隐藏溢出文本 */
   text-overflow: ellipsis;
-  /* 使用省略号截断溢出文本 */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
 }
 </style>
