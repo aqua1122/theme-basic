@@ -1,12 +1,17 @@
 <script setup>
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useNuxtApp, useState } from '#app'
+import { defineProps, onMounted } from 'vue'
+
 const { locale } = useI18n()
 const translate = useNuxtApp().$i18n.t
 
 const selectedCate = ref({ name: translate('All'), code: 'all' })
 const cates = ref([{ name: translate('All'), code: 'all' }])
-const selectedSKU = useState('SelectedSKU', () => { return {} })
+const selectedSKU = useState('SelectedSKU', () => ({}))
 const props = defineProps(['merchant'])
-const merchant = useDataMerchantInfo()
+const merchant = ref({})
 merchant.value = props.merchant
 
 const siteSettings = {
@@ -14,8 +19,8 @@ const siteSettings = {
     status: "active",
     items: [
       {
-        title: "1",  // 이모지 추가
-        desc: "24시간 실시간 상당 및 올인원 봇",
+        title: "1",  // 이모지 추가 가능
+        desc: "24시간 실시간 상담 및 올인원 봇",
         cover: "/resized-telegram-chch.png",
         url: "https://t.me/aquabeta_bot",
         titleClass: "telegram-title",  // 커스텀 클래스
@@ -32,10 +37,38 @@ const siteSettings = {
     ]
   }
 }
-const projects = merchant.value.projects
+
+const projects = merchant.value.projects || []
 
 projects.forEach((project) => {
   if (!['DIGITAL', 'MANUAL', 'LICENSE', 'GROUP', 'VPN'].includes(project.type)) {
+    return
+  }
+  cates.value.push({
+    name: project.name,  // 필요하면 다국어 처리 함수 적용
+    code: project.slug,
+  })
+
+  project.skus.forEach((sku) => {
+    sku.projectSlug = project.slug
+    sku.cover = project.cover
+    sku.project = {
+      id: project.id,
+      type: project.type,
+      name: project.name,
+      nameI18n: project.nameI18n,
+      desc: project.desc,
+      descI18n: project.descI18n,
+      hasCoupons: project.hasCoupons,
+    }
+    sku.order = sku.order || {}
+    sku.order.affCode = project.aff
+  })
+})
+
+// 필요에 따라 추가 로직 작성
+
+</script>
     return
   }
   cates.value.push({
