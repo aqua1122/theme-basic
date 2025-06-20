@@ -14,7 +14,7 @@ const siteSettings = {
     status: "active",
     items: [
       {
-        title: "",  // 이모지 추가
+        title: "1",  // 이모지 추가
         desc: "24시간 실시간 상당 및 올인원 봇",
         cover: "/resized-telegram-chch.png",
         url: "https://t.me/aquabeta_bot",
@@ -22,7 +22,7 @@ const siteSettings = {
         descClass: "telegram-desc"
       },
       {
-        title: "",
+        title: "2",
         desc: "텔레그램 채널",
         cover: "/resized-telegram-ch.png",
         url: "https://t.me/ch_aqua",
