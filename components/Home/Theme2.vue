@@ -1,4 +1,3 @@
-
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -86,7 +85,7 @@ const selectSKU = (sku) => {
 
 onMounted(() => {
   // stateMerchant.info(false);
-  // 위 함수가 없다면 주석 처리하거나 삭제하세요
+  // 필요하면 여기에 추가 로직 작성
 })
 </script>
 
@@ -106,7 +105,9 @@ onMounted(() => {
       </div>
 
       <ClientOnly v-if="!selectedSKU || Object.keys(selectedSKU).length === 0">
-        <Carousel :siteSettings="siteSettings" />
+        <div style="max-height: 320px; overflow: hidden; border-radius: 16px; box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6); margin-bottom: 1rem;">
+          <Carousel :siteSettings="siteSettings" />
+        </div>
       </ClientOnly>
 
       <div v-if="!selectedSKU || Object.keys(selectedSKU).length === 0" id="projects" class="space-y-4">
@@ -122,29 +123,29 @@ onMounted(() => {
           <template v-for="project in projects" :key="project.id">
             <template v-if="['DIGITAL', 'MANUAL', 'LICENSE', 'GROUP', 'VPN'].includes(project.type) && project.skus.length > 0 && ['all', project.slug].includes(selectedCate.code)">
               <details
-                class="group [&_summary::-webkit-details-marker]:hidden rounded-lg border1 border-gray-900 bg-gradient-to-b bg-white"
+                class="group [&_summary::-webkit-details-marker]:hidden rounded-lg border border-gray-900 bg-gradient-to-b from-[#1a1611] to-[#2d2419] shadow-lg"
                 open>
-                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-4 text-gray-900">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-4 text-yellow-400 font-semibold">
                   <div class="flex items-center gap-x-2">
                     <figure>
                       <NuxtImg loading="lazy" format="webp" :src="project.cover" :alt="project.name"
-                        class="h-[40px] w-[40px] object-cover rounded-xl" />
+                        class="h-[40px] w-[40px] object-cover rounded-xl shadow-md" />
                     </figure>
-                    <h2 class="font-medium project-name">{{ project.name }}</h2>
+                    <h2 class="font-semibold text-yellow-400">{{ project.name }}</h2>
                   </div>
 
-                  <svg class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  <svg class="size-5 shrink-0 transition duration-300 group-open:-rotate-180 text-yellow-400"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
                       d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div class="mx-4 pb-4 leading-relaxed text-gray-700">
+                <div class="mx-4 pb-4 leading-relaxed text-yellow-300 font-medium">
                   <EmptyContent v-if="project.skus.length === 0" class="pb-20">{{ $t('No_Skus') }}</EmptyContent>
-                  <div v-else class="overflow-x-auto rounded-lg border border-gray-400">
-                    <table class="table">
+                  <div v-else class="overflow-x-auto rounded-lg border border-yellow-600 bg-[#3a2d1a] shadow-inner">
+                    <table class="table w-full text-yellow-300">
                       <thead>
-                        <tr class="border-b border-gray-400">
+                        <tr class="border-b border-yellow-600">
                           <th class="w-1/2">{{ $t('product_name') }}</th>
                           <th>{{ $t('Price') }}</th>
                           <th>{{ $t('stock') }}</th>
@@ -152,19 +153,20 @@ onMounted(() => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr v-for="sku in project.skus" :key="sku.id" class="border-gray-400"
-                          :class="{ 'opacity-50 pointer-events-none': sku.stock === 0 }">
-                          <td class="sku-name">{{ sku.name }}</td>
+                        <tr v-for="sku in project.skus" :key="sku.id"
+                          :class="{ 'opacity-50 pointer-events-none': sku.stock === 0 }"
+                          class="border-yellow-600">
+                          <td>{{ sku.name }}</td>
                           <td>
                             <PriceTag :key="'price-tag-' + sku.id" :price-desc="sku.priceDesc"
-                              price-class="text-md sm:text-lg font-bold text-blue-600"
+                              price-class="text-md sm:text-lg font-bold text-yellow-400"
                               class="flex items-center gap-x-1" />
                           </td>
                           <td>{{ sku.stock }}</td>
-                          <td class="border-gray-500" :title="sku.stock === 0 ? '재고가 없습니다' : '주문하기'"
+                          <td class="border-yellow-600 cursor-pointer" :title="sku.stock === 0 ? '재고가 없습니다' : '주문하기'"
                             @click="sku.stock !== 0 && selectSKU(sku)">
                             <svg class="w-6 h-6 hover:cursor-pointer"
-                              :class="[sku.stock === 0 ? 'text-gray-400' : 'text-blue-600']" aria-hidden="true"
+                              :class="[sku.stock === 0 ? 'text-gray-600' : 'text-yellow-400']" aria-hidden="true"
                               xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                               viewBox="0 0 24 24">
                               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -202,8 +204,8 @@ onMounted(() => {
   font-weight: 600;
   font-size: 1.1rem;
   line-height: 1.3;
-  color: #d4af37 !important;
-  text-shadow: 0 0 3px rgba(212, 175, 55, 0.7) !important;
+  color: #d4af37; /* 은은한 골드톤 */
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.8);
 }
 
 .sku-name {
@@ -214,35 +216,7 @@ onMounted(() => {
   text-overflow: ellipsis;
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #f0d670 !important;
-  text-shadow: 0 0 2px rgba(240, 214, 112, 0.6) !important;
-}
-
-.btn-active {
-  background-color: #d4af37 !important; /* 은은한 골드 */
-  color: #1a1611 !important; /* 진한 브라운 */
-  border-color: #b8860b !important;
-}
-
-button, .btn {
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-summary {
-  color: #d4af37 !important;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-summary:hover {
-  color: #f0d670 !important;
-}
-
-tr.opacity-50.pointer-events-none {
-  background-color: rgba(255, 0, 0, 0.1) !important;
-}
-
-.flex.items-center.justify-center.pt-40 {
-  padding-top: 10rem !important;
-  padding-bottom: 10rem !important;
+  color: #e6d8a8; /* 부드러운 베이지 골드 톤 */
+  text-shadow: 0 0 4px rgba(230, 216, 168, 0.5);
 }
 </style>
