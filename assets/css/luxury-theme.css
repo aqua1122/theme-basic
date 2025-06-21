@@ -1,7 +1,7 @@
-/* 어두운 럭셔리 테마 */
 html, body {
-  background: #0d0a08 !important;
-  color: #d4af37 !important;
+  background-color: #1a1611 !important;  /* 진한 다크 브라운 배경 */
+  color: #d4af37 !important;              /* 골드 텍스트 */
+  min-height: 100vh;
 }
 
 *, *::before, *::after {
