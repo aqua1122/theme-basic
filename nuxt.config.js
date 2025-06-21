@@ -1,4 +1,6 @@
 // nuxt.config.js
+import vueJsx from '@vitejs/plugin-vue-jsx'
+
 export default {
   ssr: true,
   devtools: { enabled: true },
@@ -64,5 +66,8 @@ export default {
   },
   site: {
     autoLastmod: true,
-  }
+  },
+  vite: {
+    plugins: [vueJsx()],
+  },
 }
