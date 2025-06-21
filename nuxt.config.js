@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.js
 export default {
   ssr: true,
   devtools: { enabled: true },
@@ -30,7 +30,8 @@ export default {
     compressPublicAssets: true,
   },
   i18n: {
-    vueI18n: './i18n.config.ts',
+    // vueI18n 파일 경로 js로 바꾸면 .js로
+    vueI18n: './i18n.config.js', 
     locales: [
       { code: 'en', iso: 'en' },
       { code: 'es', iso: 'es' },
@@ -59,7 +60,7 @@ export default {
     }
   },
   robots: {
-    configPath: './robots.config.ts',
+    configPath: './robots.config.js',  // ts -> js 변경 가능
   },
   site: {
     autoLastmod: true,
