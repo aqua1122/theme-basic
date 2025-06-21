@@ -1,33 +1,40 @@
+/* 전체 배경 및 기본 텍스트 색상 */
 html, body {
   background-color: #1a1611 !important;  /* 진한 다크 브라운 배경 */
   color: #d4af37 !important;              /* 골드 텍스트 */
   min-height: 100vh;
 }
 
+/* 투명 배경 강제 */
 *, *::before, *::after {
   background-color: transparent !important;
 }
 
+/* 주요 컨테이너 배경 */
 div, section, main, article {
   background: #1a1611 !important;
 }
 
+/* 카드, 테이블 배경 및 테두리 */
 .card, [class*="card"], table, tbody, tr {
   background: #2d2419 !important;
   border: 1px solid #8b6914 !important;
 }
 
+/* 테이블 셀 배경 및 텍스트 색 */
 td, th {
   background: #2d2419 !important;
-  color: #ffffff !important;
+  color: #d4af37 !important;  /* 골드 톤 텍스트 */
   border-color: #8b6914 !important;
 }
 
+/* 헤딩 및 기본 텍스트 */
 h1, h2, h3, h4, h5, h6, p, span, label, a {
-  color: #d4af37 !important;  /* 은은한 골드 컬러 */
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important; /* 부드러운 빛 효과 */
+  color: #d4af37 !important;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important;
 }
 
+/* 버튼 스타일 */
 button, .btn {
   background: linear-gradient(135deg, #8b6914, #b8860b) !important;
   color: #ffffff !important;
@@ -42,20 +49,23 @@ button:hover, .btn:hover {
   box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4) !important;
 }
 
+/* 가격 텍스트 스타일 */
 [class*="price"], .price {
   color: #daa520 !important;
   font-weight: bold !important;
   font-size: 1.1em !important;
 }
 
+/* 입력폼 스타일 */
 input, textarea, select {
   background: #2d2419 !important;
   color: #ffffff !important;
   border: 1px solid #8b6914 !important;
 }
 
+/* 링크 호버 효과 */
 a:hover {
-  color: #f0d670 !important;  /* 밝은 골드 */
+  color: #f0d670 !important;
   text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
 }
 
