@@ -58,6 +58,7 @@ a:hover {
   color: #f0d670 !important;  /* 밝은 골드 */
   text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
 }
+
 /* 캐러셀 이미지 잘림 방지 및 크기 조절 */
 .carousel img,
 .carousel figure img,
@@ -117,6 +118,7 @@ a:hover {
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
 }
+
 /* 상점 소개 모달/팝업 스타일 개선 */
 .modal, .popup, .intro-modal,
 [class*="modal"], [class*="popup"], [class*="intro"] {
@@ -149,7 +151,9 @@ a:hover {
 
 .merchant-intro .contact-info {
   color: #daa520 !important;
+}
 
+/* telegram 타이틀/설명 숨기기 */
 .telegram-title,
 .telegram-desc {
   display: none !important;
