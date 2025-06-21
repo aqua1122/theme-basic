@@ -18,7 +18,7 @@ const siteSettings = {
   carousel: {
     status: "active",
     autoplay: true,  // 추가
-    interval: 3000,  // 3초마다 슬라이드 전환
+    interval: 5000,  // 3초마다 슬라이드 전환
     items: [
       {
         title: "",
