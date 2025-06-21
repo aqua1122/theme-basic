@@ -168,3 +168,22 @@ a:hover {
 .telegram-desc {
   display: none !important;
 }
+
+.price-desc, /* 실제 클래스명 맞게 바꾸세요 */
+.pricetag-text, /* 혹은 관련 클래스 */
+.pricetag-text span {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #daa520 !important; /* 골드 텍스트 유지 */
+}
+
+/* 상단 한국어 박스 배경 없애기 */
+.header-korean-box, /* 실제 클래스명 맞게 바꾸세요 */
+.language-selector {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
