@@ -2,6 +2,7 @@
 html, body {
   background: #0d0a08 !important;
   color: #d4af37 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
 }
 
 *, *::before, *::after {
@@ -14,98 +15,103 @@ div, section, main, article {
 
 .card, [class*="card"], table, tbody, tr {
   background: #2d2419 !important;
-  border: 1px solid #8b6914 !important;
+  border: 1px solid #b2962a !important;
+  box-shadow: 0 0 15px rgba(210, 175, 55, 0.3);
 }
 
 td, th {
   background: #2d2419 !important;
-  color: #ffffff !important;
-  border-color: #8b6914 !important;
+  color: #f5e084 !important;
+  border-color: #b2962a !important;
+  text-shadow: 0 0 5px rgba(240, 220, 100, 0.7);
 }
 
 h1, h2, h3, h4, h5, h6, p, span, label, a {
-  color: #d4af37 !important;  /* 은은한 골드 컬러 */
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important; /* 부드러운 빛 효과 */
+  color: #d4af37 !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.8) !important;
 }
 
 button, .btn {
-  background: linear-gradient(135deg, #8b6914, #b8860b) !important;
-  color: #ffffff !important;
-  border: 1px solid #8b6914 !important;
-  font-weight: bold !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  background: linear-gradient(135deg, #b2962a, #daa520) !important;
+  color: #1a1108 !important;
+  border: 1px solid #b2962a !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  transition: all 0.3s ease;
 }
 
 button:hover, .btn:hover {
-  background: linear-gradient(135deg, #b8860b, #daa520) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4) !important;
+  background: linear-gradient(135deg, #daa520, #f5d742) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.6) !important;
 }
 
 [class*="price"], .price {
-  color: #daa520 !important;
-  font-weight: bold !important;
-  font-size: 1.1em !important;
+  color: #f5d742 !important;
+  font-weight: 700 !important;
+  font-size: 1.15em !important;
+  text-shadow: 0 0 6px rgba(245, 215, 88, 0.9);
 }
 
 input, textarea, select {
   background: #2d2419 !important;
-  color: #ffffff !important;
-  border: 1px solid #8b6914 !important;
+  color: #f5e084 !important;
+  border: 1px solid #b2962a !important;
+  box-shadow: inset 0 0 5px rgba(210, 175, 55, 0.4);
 }
 
 a:hover {
-  color: #f0d670 !important;  /* 밝은 골드 */
-  text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
+  color: #fff9c4 !important;
+  text-shadow: 0 0 10px rgba(255, 255, 200, 1) !important;
 }
 
-/* 캐러셀 이미지 잘림 방지 */
+/* 캐러셀 이미지 */
 .carousel img,
 .carousel figure img,
 [id*="carousel"] img,
 [data-carousel] img {
-  width: auto !important;            /* 가로 자동 조절 */
-  max-width: 90% !important;         /* 최대 가로 크기 제한 */
-  height: auto !important;           /* 세로 자동 조절 */
-  max-height: 90% !important;        /* 최대 세로 크기 제한 */
-  object-fit: contain !important;    /* 이미지 비율 유지하며 컨테이너 안에 맞춤 */
-  object-position: center !important; /* 중앙 정렬 */
-  margin: auto;
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 12px;
 }
 
-/* 캐러셀 배경 설정 */
+/* 캐러셀 배경 */
 .carousel figure,
 [id*="carousel"] figure {
   background: #1a1611 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  border-radius: 12px;
 }
 
-/* 캐러셀 컨테이너 높이 조정 */
+/* 캐러셀 컨테이너 높이 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
-  height: 250px !important;        /* 기존보다 낮춰서 여백 확보 */
+  height: 300px !important;
 }
 
 .carousel .md\:h-80,
 [id*="carousel"] .md\:h-80 {
-  height: 300px !important;
+  height: 400px !important;
 }
 
-/* 상점 소개 모달/팝업 스타일 개선 */
+/* 모달 팝업 */
 .modal, .popup, .intro-modal, 
 [class*="modal"], [class*="popup"], [class*="intro"] {
   background: rgba(13, 10, 8, 0.95) !important;
+  border-radius: 20px !important;
 }
 
 .modal-box, .popup-content, .intro-content,
 [class*="modal-box"], [class*="popup-content"] {
   background: linear-gradient(135deg, #1a1611, #2d2419) !important;
-  border: 2px solid #8b6914 !important;
-  border-radius: 16px !important;
-  color: #ffffff !important;
+  border: 2px solid #b2962a !important;
+  border-radius: 20px !important;
+  color: #fff9c4 !important;
+  box-shadow: 0 10px 30px rgba(210, 175, 55, 0.5);
 }
 
 /* 노란색 배경 제거 */
@@ -115,48 +121,49 @@ a:hover {
   background: linear-gradient(135deg, #1a1611, #2d2419) !important;
 }
 
-/* 상점 정보 카드 스타일 */
+/* 상점 카드 */
 .merchant-intro, .store-intro {
   background: #2d2419 !important;
-  border: 2px solid #8b6914 !important;
-  border-radius: 12px !important;
-  color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3) !important;
+  border: 2px solid #b2962a !important;
+  border-radius: 14px !important;
+  color: #fff9c4 !important;
+  box-shadow: 0 10px 30px rgba(139, 115, 85, 0.5) !important;
 }
 
-/* 텍스트 색상 */
 .merchant-intro h3, .store-intro h3,
 .merchant-intro p, .store-intro p {
-  color: #e6d8a8 !important;  /* 부드러운 베이지 골드 톤 */
-  text-shadow: 0 0 4px rgba(230, 216, 168, 0.5) !important;
+  color: #f5e084 !important;
+  text-shadow: 0 0 6px rgba(230, 216, 168, 0.7) !important;
 }
 
 .merchant-intro .contact-info {
-  color: #daa520 !important;
+  color: #f5d742 !important;
 }
 
-/* 캐러셀 이미지 크기 문제 해결 */
-.carousel .relative.h-56,
-[id*="carousel"] .relative.h-56 {
-  height: 400px !important;        /* 기본 높이 조정 */
+/* 테이블 테두리 */
+table.table {
+  border: 1px solid #b2962a !important;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 18px rgba(210, 175, 55, 0.5);
 }
 
-.carousel .md\:h-80,
-[id*="carousel"] .md\:h-80 {
-  height: 500px !important;        /* 중간 이상 화면 높이 */
+table.table thead tr {
+  border-bottom: 1px solid #b2962a !important;
 }
 
-.carousel img,
-.carousel figure img,
-[id*="carousel"] img,
-[data-carousel] img {
-  width: 100% !important;          /* 가로 꽉 채우기 */
-  height: 100% !important;         /* 세로 꽉 채우기 */
-  object-fit: cover !important;    /* 비율 유지하며 잘라내기 */
-  object-position: center !important; /* 중앙 정렬 */
+table.table th, table.table td {
+  border-color: #b2962a !important;
 }
 
-.carousel,
-[id*="carousel"] {
-  aspect-ratio: 3 / 2 !important; 
+/* 재고 없을 때 */
+tr.opacity-50.pointer-events-none {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 버튼 */
+button.btn, .btn {
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 12px rgba(218, 165, 32, 0.7);
+  border-radius: 12px;
 }
