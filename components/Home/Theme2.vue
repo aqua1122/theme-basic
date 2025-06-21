@@ -17,18 +17,20 @@ merchant.value = props.merchant
 const siteSettings = {
   carousel: {
     status: "active",
+    autoplay: true,  // 추가
+    interval: 3000,  // 3초마다 슬라이드 전환
     items: [
       {
-        title: "1",
-        desc: "24시간 실시간 상담 및 올인원 봇",
+        title: "",
+        desc: "",
         cover: "/resized-telegram-chch.png",
         url: "https://t.me/aquabeta_bot",
         titleClass: "telegram-title",
         descClass: "telegram-desc"
       },
       {
-        title: "2",
-        desc: "텔레그램 채널",
+        title: "",
+        desc: "",
         cover: "/resized-telegram-ch.png",
         url: "https://t.me/ch_aqua",
         titleClass: "telegram-title",
