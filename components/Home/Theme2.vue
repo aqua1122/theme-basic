@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -129,7 +130,7 @@ onMounted(() => {
                       <NuxtImg loading="lazy" format="webp" :src="project.cover" :alt="project.name"
                         class="h-[40px] w-[40px] object-cover rounded-xl" />
                     </figure>
-                    <h2 class="font-medium">{{ project.name }}</h2>
+                    <h2 class="font-medium project-name">{{ project.name }}</h2>
                   </div>
 
                   <svg class="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -153,7 +154,7 @@ onMounted(() => {
                       <tbody>
                         <tr v-for="sku in project.skus" :key="sku.id" class="border-gray-400"
                           :class="{ 'opacity-50 pointer-events-none': sku.stock === 0 }">
-                          <td>{{ sku.name }}</td>
+                          <td class="sku-name">{{ sku.name }}</td>
                           <td>
                             <PriceTag :key="'price-tag-' + sku.id" :price-desc="sku.priceDesc"
                               price-class="text-md sm:text-lg font-bold text-blue-600"
@@ -201,7 +202,8 @@ onMounted(() => {
   font-weight: 600;
   font-size: 1.1rem;
   line-height: 1.3;
-  color: #333;
+  color: #d4af37 !important;
+  text-shadow: 0 0 3px rgba(212, 175, 55, 0.7) !important;
 }
 
 .sku-name {
@@ -212,6 +214,35 @@ onMounted(() => {
   text-overflow: ellipsis;
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #555;
+  color: #f0d670 !important;
+  text-shadow: 0 0 2px rgba(240, 214, 112, 0.6) !important;
+}
+
+.btn-active {
+  background-color: #d4af37 !important; /* 은은한 골드 */
+  color: #1a1611 !important; /* 진한 브라운 */
+  border-color: #b8860b !important;
+}
+
+button, .btn {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+summary {
+  color: #d4af37 !important;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+summary:hover {
+  color: #f0d670 !important;
+}
+
+tr.opacity-50.pointer-events-none {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+.flex.items-center.justify-center.pt-40 {
+  padding-top: 10rem !important;
+  padding-bottom: 10rem !important;
 }
 </style>
