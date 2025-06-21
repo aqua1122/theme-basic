@@ -160,3 +160,8 @@ a:hover {
 [id*="carousel"] {
   aspect-ratio: 3 / 2 !important;
 }
+
+.telegram-title,
+.telegram-desc {
+  display: none !important;
+}
