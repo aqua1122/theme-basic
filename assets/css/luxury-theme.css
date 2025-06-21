@@ -1,48 +1,31 @@
-/* 어두운 럭셔리 테마 - luxury-theme.css */
-
+/* 어두운 럭셔리 테마 */
 html, body {
   background: #0d0a08 !important;
   color: #d4af37 !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
 }
 
 *, *::before, *::after {
   background-color: transparent !important;
-  box-sizing: border-box;
 }
 
 div, section, main, article {
   background: #1a1611 !important;
-  color: #d4af37 !important;
 }
 
 .card, [class*="card"], table, tbody, tr {
   background: #2d2419 !important;
   border: 1px solid #8b6914 !important;
-  border-radius: 8px;
 }
 
 td, th {
   background: #2d2419 !important;
   color: #ffffff !important;
   border-color: #8b6914 !important;
-  padding: 0.5rem 1rem;
 }
 
-h1, h2, h3, h4, h5, h6,
-p, span, label, a {
-  color: #d4af37 !important;
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important;
-  font-weight: 600;
-}
-
-a:hover {
-  color: #f0d670 !important;
-  text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
-  transition: color 0.3s ease;
+h1, h2, h3, h4, h5, h6, p, span, label, a {
+  color: #d4af37 !important;  /* 은은한 골드 컬러 */
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important; /* 부드러운 빛 효과 */
 }
 
 button, .btn {
@@ -51,65 +34,108 @@ button, .btn {
   border: 1px solid #8b6914 !important;
   font-weight: bold !important;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button:hover, .btn:hover {
   background: linear-gradient(135deg, #b8860b, #daa520) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(184, 134, 11, 0.5) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4) !important;
 }
 
 [class*="price"], .price {
   color: #daa520 !important;
   font-weight: bold !important;
   font-size: 1.1em !important;
-  text-shadow: 0 0 5px rgba(218, 165, 32, 0.7) !important;
 }
 
-/* 폼 요소 */
 input, textarea, select {
   background: #2d2419 !important;
   color: #ffffff !important;
   border: 1px solid #8b6914 !important;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  border-color: #daa520 !important;
-  box-shadow: 0 0 10px rgba(218, 165, 32, 0.7) !important;
+a:hover {
+  color: #f0d670 !important;  /* 밝은 골드 */
+  text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
 }
 
-/* 캐러셀 이미지 스타일 */
+/* 캐러셀 이미지 잘림 방지 */
 .carousel img,
 .carousel figure img,
 [id*="carousel"] img,
 [data-carousel] img {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: cover !important;
+  width: auto !important;
+  max-width: 90% !important;
+  height: auto !important;
+  max-height: 90% !important;
+  object-fit: contain !important;
   object-position: center !important;
   margin: auto;
   display: block;
 }
 
+/* 캐러셀 배경 설정 */
 .carousel figure,
 [id*="carousel"] figure {
   background: #1a1611 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border-radius: 10px;
 }
 
+/* 캐러셀 컨테이너 높이 조정 */
+.carousel .relative.h-56,
+[id*="carousel"] .relative.h-56 {
+  height: 250px !important;
+}
+
+.carousel .md\:h-80,
+[id*="carousel"] .md\:h-80 {
+  height: 300px !important;
+}
+
+/* 상점 소개 모달/팝업 스타일 개선 */
+.modal, .popup, .intro-modal,
+[class*="modal"], [class*="popup"], [class*="intro"] {
+  background: rgba(13, 10, 8, 0.95) !important;
+}
+
+.modal-box, .popup-content, .intro-content,
+[class*="modal-box"], [class*="popup-content"] {
+  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
+  border: 2px solid #8b6914 !important;
+  border-radius: 16px !important;
+  color: #ffffff !important;
+}
+
+/* 노란색 배경 제거 */
+.bg-yellow-500, .bg-yellow-400, .bg-amber-500, .bg-amber-400,
+[style*="background: yellow"], [style*="background-color: yellow"],
+[style*="background: #fbbf24"], [style*="background: #f59e0b"] {
+  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
+}
+
+/* 상점 정보 카드 스타일 */
+.merchant-intro, .store-intro {
+  background: #2d2419 !important;
+  border: 2px solid #8b6914 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3) !important;
+}
+
+/* 텍스트 색상 */
+.merchant-intro h3, .store-intro h3,
+.merchant-intro p, .store-intro p {
+  color: #e6d8a8 !important;
+  text-shadow: 0 0 4px rgba(230, 216, 168, 0.5) !important;
+}
+
+.merchant-intro .contact-info {
+  color: #daa520 !important;
+}
+
+/* 캐러셀 이미지 크기 문제 해결 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
   height: 400px !important;
@@ -120,49 +146,17 @@ input:focus, textarea:focus, select:focus {
   height: 500px !important;
 }
 
+.carousel img,
+.carousel figure img,
+[id*="carousel"] img,
+[data-carousel] img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
 .carousel,
 [id*="carousel"] {
   aspect-ratio: 3 / 2 !important;
-}
-
-/* 모달, 팝업, 소개창 스타일 */
-.modal, .popup, .intro-modal,
-[class*="modal"], [class*="popup"], [class*="intro"] {
-  background: rgba(13, 10, 8, 0.95) !important;
-  border-radius: 20px;
-}
-
-.modal-box, .popup-content, .intro-content,
-[class*="modal-box"], [class*="popup-content"] {
-  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
-  border: 2px solid #8b6914 !important;
-  border-radius: 16px !important;
-  color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3) !important;
-}
-
-/* 노란 배경색 강제 제거 */
-.bg-yellow-500, .bg-yellow-400, .bg-amber-500, .bg-amber-400,
-[style*="background: yellow"], [style*="background-color: yellow"],
-[style*="background: #fbbf24"], [style*="background: #f59e0b"] {
-  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
-}
-
-/* 상점 소개 카드 */
-.merchant-intro, .store-intro {
-  background: #2d2419 !important;
-  border: 2px solid #8b6914 !important;
-  border-radius: 12px !important;
-  color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3) !important;
-}
-
-.merchant-intro h3, .store-intro h3,
-.merchant-intro p, .store-intro p {
-  color: #e6d8a8 !important;
-  text-shadow: 0 0 4px rgba(230, 216, 168, 0.5) !important;
-}
-
-.merchant-intro .contact-info {
-  color: #daa520 !important;
 }
