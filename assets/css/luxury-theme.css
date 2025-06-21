@@ -65,9 +65,9 @@ a:hover {
 [id*="carousel"] img,
 [data-carousel] img {
   width: auto !important;
-  max-width: 90% !important;
+  max-width: 91% !important;
   height: auto !important;
-  max-height: 90% !important;
+  max-height: 91% !important;
   object-fit: contain !important;
   object-position: center !important;
   margin: auto;
@@ -86,12 +86,12 @@ a:hover {
 /* 캐러셀 컨테이너 높이 조정 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
-  height: 250px !important;
+  height: 400px !important;  /* 사진에 맞게 높이 변경 */
 }
 
 .carousel .md\:h-80,
 [id*="carousel"] .md\:h-80 {
-  height: 300px !important;
+  height: 500px !important;  /* 큰 화면일 때 높이 */
 }
 
 /* 상점 소개 모달/팝업 스타일 개선 */
