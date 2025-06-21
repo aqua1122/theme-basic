@@ -58,20 +58,29 @@ a:hover {
   color: #f0d670 !important;  /* 밝은 골드 */
   text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
 }
-
-/* 캐러셀 이미지 잘림 방지 */
+/* 캐러셀 이미지 잘림 방지 및 크기 조절 */
 .carousel img,
 .carousel figure img,
 [id*="carousel"] img,
 [data-carousel] img {
   width: auto !important;
-  max-width: 91% !important;
+  max-width: 90% !important;         /* 최대 가로 90%로 제한해 여백 확보 */
   height: auto !important;
-  max-height: 91% !important;
-  object-fit: contain !important;
+  max-height: 90% !important;        /* 최대 세로 90%로 제한 */
+  object-fit: contain !important;    /* 비율 유지하며 컨테이너 안에 딱 맞춤 */
   object-position: center !important;
   margin: auto;
   display: block;
+  border-radius: 12px;                /* 부드러운 모서리 */
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);  /* 은은한 골드 그림자 */
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover,
+.carousel figure img:hover,
+[id*="carousel"] img:hover,
+[data-carousel] img:hover {
+  transform: scale(1.05);             /* 호버 시 살짝 확대 효과 */
 }
 
 /* 캐러셀 배경 설정 */
@@ -81,19 +90,33 @@ a:hover {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  padding: 12px;                      /* 이미지와 배경 사이 여백 추가 */
+  border-radius: 16px;                /* 배경 모서리 둥글게 */
 }
 
 /* 캐러셀 컨테이너 높이 조정 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
-  height: 400px !important;  /* 사진에 맞게 높이 변경 */
+  height: 400px !important;          /* 사진에 맞는 적당한 높이 */
+  max-width: 100%;                   /* 가로 꽉 채우기 */
 }
 
 .carousel .md\:h-80,
 [id*="carousel"] .md\:h-80 {
-  height: 500px !important;  /* 큰 화면일 때 높이 */
+  height: 500px !important;          /* 큰 화면일 때 높이 */
+  max-width: 100%;
 }
 
+/* 캐러셀 자체 비율 유지 */
+.carousel,
+[id*="carousel"] {
+  aspect-ratio: 3 / 2 !important;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+}
 /* 상점 소개 모달/팝업 스타일 개선 */
 .modal, .popup, .intro-modal,
 [class*="modal"], [class*="popup"], [class*="intro"] {
@@ -106,13 +129,6 @@ a:hover {
   border: 2px solid #8b6914 !important;
   border-radius: 16px !important;
   color: #ffffff !important;
-}
-
-/* 노란색 배경 제거 */
-.bg-yellow-500, .bg-yellow-400, .bg-amber-500, .bg-amber-400,
-[style*="background: yellow"], [style*="background-color: yellow"],
-[style*="background: #fbbf24"], [style*="background: #f59e0b"] {
-  background: linear-gradient(135deg, #1a1611, #2d2419) !important;
 }
 
 /* 상점 정보 카드 스타일 */
@@ -133,33 +149,6 @@ a:hover {
 
 .merchant-intro .contact-info {
   color: #daa520 !important;
-}
-
-/* 캐러셀 이미지 크기 문제 해결 */
-.carousel .relative.h-56,
-[id*="carousel"] .relative.h-56 {
-  height: 400px !important;
-}
-
-.carousel .md\:h-80,
-[id*="carousel"] .md\:h-80 {
-  height: 500px !important;
-}
-
-.carousel img,
-.carousel figure img,
-[id*="carousel"] img,
-[data-carousel] img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
-.carousel,
-[id*="carousel"] {
-  aspect-ratio: 3 / 2 !important;
-}
 
 .telegram-title,
 .telegram-desc {
