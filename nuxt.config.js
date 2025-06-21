@@ -32,7 +32,6 @@ export default {
     compressPublicAssets: true,
   },
   i18n: {
-    // vueI18n 파일 경로 js로 바꾸면 .js로
     vueI18n: './i18n.config.js', 
     locales: [
       { code: 'en', iso: 'en' },
@@ -62,7 +61,7 @@ export default {
     }
   },
   robots: {
-    configPath: './robots.config.js',  // ts -> js 변경 가능
+    configPath: './robots.config.js',
   },
   site: {
     autoLastmod: true,
