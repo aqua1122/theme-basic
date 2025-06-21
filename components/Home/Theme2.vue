@@ -17,13 +17,13 @@ merchant.value = props.merchant
 const siteSettings = {
   carousel: {
     status: "active",
-    autoplay: true,  // 추가
-    interval: 5000,  // 3초마다 슬라이드 전환
+    autoplay: true,
+    interval: 3000,
     items: [
       {
         title: "",
         desc: "",
-        cover: "/resized-telegram-chch.png",
+        cover: "/docs/images/tele-cs.png",  // 이미지 경로 변경
         url: "https://t.me/aquabeta_bot",
         titleClass: "telegram-title",
         descClass: "telegram-desc"
@@ -31,7 +31,7 @@ const siteSettings = {
       {
         title: "",
         desc: "",
-        cover: "/resized-telegram-ch.png",
+        cover: "/docs/images/tele-cs.png",  // 두 번째 이미지도 동일하게 변경 가능
         url: "https://t.me/ch_aqua",
         titleClass: "telegram-title",
         descClass: "telegram-desc"
