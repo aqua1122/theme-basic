@@ -90,7 +90,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="flex justify-center bg-[#1a1611] text-[#bfa559] min-h-screen px-4 py-6">
+  <section class="flex justify-center bg-dark-brown text-gold min-h-screen px-4 py-6">
     <div v-if="merchant && Object.keys(merchant).length" class="w-full max-w-screen-lg space-y-6">
       <div class="flex items-center">
         <div>
@@ -109,13 +109,13 @@ onMounted(() => {
       </ClientOnly>
 
       <div v-if="!selectedSKU || Object.keys(selectedSKU).length === 0" id="projects" class="space-y-6">
-        <div class="space-x-2">
+        <div class="space-x-2 overflow-x-auto scrollbar-hide">
           <button
             v-for="cate in cates"
             :key="cate.code"
             @click="changeCate(cate.code)"
-            class="btn btn-xs btn-outline rounded-md text-gold border-gold hover:bg-gold hover:text-black"
-            :class="{ 'btn-active bg-gold text-black': selectedCate.code === cate.code }"
+            class="btn btn-xs btn-outline rounded-md text-gold border-gold hover:bg-gold hover:text-dark-brown whitespace-nowrap"
+            :class="{ 'btn-active bg-gold text-dark-brown': selectedCate.code === cate.code }"
           >
             {{ cate.name }}
           </button>
@@ -126,7 +126,7 @@ onMounted(() => {
             <template v-if="['DIGITAL', 'MANUAL', 'LICENSE', 'GROUP', 'VPN'].includes(project.type) && project.skus.length > 0 && ['all', project.slug].includes(selectedCate.code)">
               <details
                 open
-                class="group rounded-lg border border-gold bg-gradient-to-b from-[#1a1611] to-[#2e2718] shadow-lg"
+                class="group rounded-lg border border-gold bg-gradient-to-b from-dark-brown to-dark-brown-alt shadow-lg"
               >
                 <summary
                   class="flex cursor-pointer items-center justify-between gap-2 p-4 text-gold font-semibold select-none"
@@ -252,16 +252,19 @@ section {
   padding: 1.5rem 1rem;
 }
 
+/* 골드 텍스트 */
 .text-gold {
   color: var(--gold) !important;
   text-shadow: 0 0 6px rgba(191, 165, 89, 0.7);
 }
 
+/* 골드 라이트 텍스트 */
 .text-gold-light {
   color: var(--gold-light) !important;
   text-shadow: 0 0 4px rgba(230, 216, 168, 0.5);
 }
 
+/* 버튼 기본 스타일 */
 .btn {
   border-radius: 0.375rem;
   font-weight: 600;
@@ -270,29 +273,34 @@ section {
   cursor: pointer;
 }
 
+/* 버튼 작은 사이즈 */
 .btn-xs {
   font-size: 0.75rem;
   padding: 0.125rem 0.5rem;
 }
 
+/* 테두리만 있는 버튼 */
 .btn-outline {
   border: 1.5px solid var(--gold) !important;
   background-color: transparent !important;
   color: var(--gold) !important;
 }
 
+/* 버튼 호버 */
 .btn-outline:hover {
   background-color: var(--gold) !important;
-  color: #1a1611 !important;
+  color: var(--dark-brown) !important;
   box-shadow: 0 6px 12px rgba(191, 165, 89, 0.5);
 }
 
+/* 활성화된 버튼 */
 .btn-active {
   background-color: var(--gold) !important;
-  color: #1a1611 !important;
+  color: var(--dark-brown) !important;
   box-shadow: 0 6px 15px rgba(191, 165, 89, 0.8);
 }
 
+/* details 스타일 */
 details {
   border: 1.5px solid var(--gold) !important;
   border-radius: 1rem;
@@ -301,6 +309,7 @@ details {
   transition: all 0.3s ease;
 }
 
+/* summary 스타일 */
 summary {
   padding: 1rem;
   cursor: pointer;
@@ -313,15 +322,18 @@ summary {
   user-select: none;
 }
 
+/* summary hover */
 summary:hover {
-  color: #e6d8a8;
+  color: var(--gold-light);
 }
 
+/* summary 내 이미지 */
 summary > div > figure > img {
   border-radius: 0.75rem;
   box-shadow: 0 3px 12px rgba(191, 165, 89, 0.6);
 }
 
+/* h2 스타일 */
 h2 {
   font-weight: 600;
   font-size: 1.125rem;
@@ -331,6 +343,7 @@ h2 {
   text-overflow: ellipsis;
 }
 
+/* details 본문 */
 details > div {
   padding: 1rem;
   color: var(--gold-light);
@@ -338,6 +351,7 @@ details > div {
   line-height: 1.5;
 }
 
+/* 테이블 스타일 */
 table {
   width: 100%;
   border-collapse: separate;
@@ -345,16 +359,19 @@ table {
   color: var(--gold-light);
 }
 
+/* 테이블 헤더 */
 thead tr {
   border-bottom: 2px solid var(--gold);
 }
 
+/* 테이블 셀 */
 th, td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--gold);
   text-align: left;
 }
 
+/* td 내용 줄임 */
 td {
   max-width: 220px;
   white-space: nowrap;
@@ -362,28 +379,49 @@ td {
   text-overflow: ellipsis;
 }
 
+/* tbody 행 트랜지션 */
 tbody tr {
   transition: opacity 0.3s ease;
 }
 
+/* 재고 0일 때 흐리게 */
 tbody tr.opacity-50 {
   opacity: 0.5;
   pointer-events: none;
 }
 
+/* 주문 가능 셀 마우스 포인터 */
 td.cursor-pointer {
   cursor: pointer;
 }
 
+/* 주문 아이콘 트랜지션 */
 td.cursor-pointer svg {
   transition: color 0.3s ease;
 }
 
+/* 주문 아이콘 호버 */
 td.cursor-pointer svg:hover {
   color: #f2e6a7 !important;
 }
 
+/* 로딩 스피너 색상 */
 .loading {
   color: var(--gold);
+}
+
+/* 가로스크롤 숨기기 (버튼 리스트) */
+#projects > div.space-x-2 {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+#projects > div.space-x-2::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* 버튼 리스트 줄바꿈 방지 */
+#projects > div.space-x-2 > button {
+  white-space: nowrap;
 }
 </style>
