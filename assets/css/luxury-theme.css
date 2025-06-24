@@ -1,7 +1,7 @@
 /* 전체 배경 및 기본 텍스트 색상 */
 html, body {
-  background-color: #1a1611 !important;  /* 진한 다크 브라운 */
-  color: #d4af37 !important;              /* 골드 텍스트 */
+  background-color: #1a1611 !important;
+  color: #d4af37 !important;
   min-height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,7 +22,7 @@ div, section, main, article {
 /* 테이블 셀 배경 및 텍스트 색 */
 td, th {
   background: #2d2419 !important;
-  color: #d4af37 !important;  /* 골드 톤 텍스트 */
+  color: #d4af37 !important;
   border-color: #8b6914 !important;
   padding: 0.75rem 1rem;
   text-align: left;
@@ -31,8 +31,7 @@ td, th {
 /* 헤딩 및 기본 텍스트 */
 h1, h2, h3, h4, h5, h6, p, span, label, a {
   color: #d4af37 !important;
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important;
-}
+  text-shadow:
 
 /* 버튼 스타일 */
 button, .btn {
@@ -143,6 +142,7 @@ a:hover {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
+}: 0 8px 30px rgba(212, 175, 55, 0.55);
 }
 
 /* 상점 소개 모달/팝업 스타일 개선 */
