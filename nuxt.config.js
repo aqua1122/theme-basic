@@ -10,7 +10,7 @@ export default {
       idatariver: 'https://www.idatariver.com',
       idatariverServer: 'https://open.idatariver.com',
       apiEncryptKey: 'Powered By iDataRiver.com',
-    }
+    },
   },
   components: [
     {
@@ -32,7 +32,9 @@ export default {
     compatibilityDate: '2025-06-25',
     compressPublicAssets: true,
   },
-}
+  vite: {
+    plugins: [vueJsx()],
+  },
   i18n: {
     vueI18n: './i18n.config.js', 
     locales: [
@@ -60,15 +62,12 @@ export default {
       useCookie: true,
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
-    }
+    },
   },
   robots: {
     configPath: './robots.config.js',
   },
   site: {
     autoLastmod: true,
-  },
-  vite: {
-    plugins: [vueJsx()],
   },
 }
