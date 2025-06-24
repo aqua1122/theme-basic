@@ -1,13 +1,10 @@
 /* 전체 배경 및 기본 텍스트 색상 */
 html, body {
-  background-color: #1a1611 !important;  /* 진한 다크 브라운 배경 */
+  background-color: #1a1611 !important;  /* 진한 다크 브라운 */
   color: #d4af37 !important;              /* 골드 텍스트 */
   min-height: 100vh;
-}
-
-/* 투명 배경 강제 */
-*, *::before, *::after {
-  background-color: transparent !important;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* 주요 컨테이너 배경 */
@@ -19,6 +16,7 @@ div, section, main, article {
 .card, [class*="card"], table, tbody, tr {
   background: #2d2419 !important;
   border: 1px solid #8b6914 !important;
+  border-radius: 8px;
 }
 
 /* 테이블 셀 배경 및 텍스트 색 */
@@ -26,6 +24,8 @@ td, th {
   background: #2d2419 !important;
   color: #d4af37 !important;  /* 골드 톤 텍스트 */
   border-color: #8b6914 !important;
+  padding: 0.75rem 1rem;
+  text-align: left;
 }
 
 /* 헤딩 및 기본 텍스트 */
@@ -37,36 +37,51 @@ h1, h2, h3, h4, h5, h6, p, span, label, a {
 /* 버튼 스타일 */
 button, .btn {
   background: linear-gradient(135deg, #8b6914, #b8860b) !important;
-  color: #ffffff !important;
+  color: #fff !important;
   border: 1px solid #8b6914 !important;
-  font-weight: bold !important;
+  font-weight: 700 !important;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 button:hover, .btn:hover {
   background: linear-gradient(135deg, #b8860b, #daa520) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(184, 134, 11, 0.6) !important;
 }
 
 /* 가격 텍스트 스타일 */
 [class*="price"], .price {
   color: #daa520 !important;
-  font-weight: bold !important;
-  font-size: 1.1em !important;
+  font-weight: 700 !important;
+  font-size: 1.15em !important;
+  text-shadow: 0 0 5px rgba(218, 165, 32, 0.9);
 }
 
 /* 입력폼 스타일 */
 input, textarea, select {
   background: #2d2419 !important;
-  color: #ffffff !important;
+  color: #fff !important;
   border: 1px solid #8b6914 !important;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #daa520 !important;
+  outline: none;
+  box-shadow: 0 0 8px rgba(218, 165, 32, 0.7);
 }
 
 /* 링크 호버 효과 */
 a:hover {
   color: #f0d670 !important;
   text-shadow: 0 0 8px rgba(240, 214, 112, 0.8) !important;
+  text-decoration: underline;
 }
 
 /* 캐러셀 이미지 잘림 방지 및 크기 조절 */
@@ -75,23 +90,24 @@ a:hover {
 [id*="carousel"] img,
 [data-carousel] img {
   width: auto !important;
-  max-width: 90% !important;         /* 최대 가로 90%로 제한해 여백 확보 */
+  max-width: 90% !important;
   height: auto !important;
-  max-height: 90% !important;        /* 최대 세로 90%로 제한 */
-  object-fit: contain !important;    /* 비율 유지하며 컨테이너 안에 딱 맞춤 */
+  max-height: 90% !important;
+  object-fit: contain !important;
   object-position: center !important;
   margin: auto;
   display: block;
-  border-radius: 12px;                /* 부드러운 모서리 */
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);  /* 은은한 골드 그림자 */
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel img:hover,
 .carousel figure img:hover,
 [id*="carousel"] img:hover,
 [data-carousel] img:hover {
-  transform: scale(1.05);             /* 호버 시 살짝 확대 효과 */
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(218, 165, 32, 0.8);
 }
 
 /* 캐러셀 배경 설정 */
@@ -101,20 +117,20 @@ a:hover {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 12px;                      /* 이미지와 배경 사이 여백 추가 */
-  border-radius: 16px;                /* 배경 모서리 둥글게 */
+  padding: 12px;
+  border-radius: 16px;
 }
 
 /* 캐러셀 컨테이너 높이 조정 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
-  height: 400px !important;          /* 사진에 맞는 적당한 높이 */
-  max-width: 100%;                   /* 가로 꽉 채우기 */
+  height: 400px !important;
+  max-width: 100%;
 }
 
 .carousel .md\:h-80,
 [id*="carousel"] .md\:h-80 {
-  height: 500px !important;          /* 큰 화면일 때 높이 */
+  height: 500px !important;
   max-width: 100%;
 }
 
@@ -126,7 +142,7 @@ a:hover {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
 }
 
 /* 상점 소개 모달/팝업 스타일 개선 */
@@ -141,6 +157,7 @@ a:hover {
   border: 2px solid #8b6914 !important;
   border-radius: 16px !important;
   color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(218, 165, 32, 0.6);
 }
 
 /* 상점 정보 카드 스타일 */
@@ -149,14 +166,15 @@ a:hover {
   border: 2px solid #8b6914 !important;
   border-radius: 12px !important;
   color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.3) !important;
+  box-shadow: 0 8px 25px rgba(139, 115, 85, 0.35) !important;
+  padding: 1rem;
 }
 
 /* 텍스트 색상 */
 .merchant-intro h3, .store-intro h3,
 .merchant-intro p, .store-intro p {
   color: #e6d8a8 !important;
-  text-shadow: 0 0 4px rgba(230, 216, 168, 0.5) !important;
+  text-shadow: 0 0 5px rgba(230, 216, 168, 0.55) !important;
 }
 
 .merchant-intro .contact-info {
@@ -169,17 +187,19 @@ a:hover {
   display: none !important;
 }
 
-.price-desc, /* 실제 클래스명 맞게 바꾸세요 */
-.pricetag-text, /* 혹은 관련 클래스 */
+/* 가격 표시 관련 */
+.price-desc,
+.pricetag-text,
 .pricetag-text span {
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: #daa520 !important; /* 골드 텍스트 유지 */
+  color: #daa520 !important;
 }
 
+/* flex items-center 골드 텍스트 조정 */
 .flex.items-center.gap-x-1,
 .flex.items-center.gap-x-1 > div,
 .flex.items-center.gap-x-1 > div > span {
@@ -188,5 +208,5 @@ a:hover {
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  color: #daa520 !important; /* 골드톤 유지 */
+  color: #daa520 !important;
 }
