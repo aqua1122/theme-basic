@@ -1,7 +1,7 @@
 /* 전체 배경 및 기본 텍스트 색상 */
 html, body {
-  background-color: #1a1611 !important;
-  color: #d4af37 !important;
+  background-color: #1a1611 !important;  /* 진한 다크 브라운 배경 */
+  color: #d4af37 !important;              /* 골드 텍스트 */
   min-height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -84,7 +84,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 캐러셀 이미지 잘림 방지 및 크기 조절 */
+/* 캐러셀 이미지 및 컨테이너 */
 .carousel img,
 .carousel figure img,
 [id*="carousel"] img,
@@ -112,7 +112,6 @@ a:hover {
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
 }
 
-/* 캐러셀 배경 설정 */
 .carousel figure,
 [id*="carousel"] figure {
   background: #1a1611 !important;
@@ -123,7 +122,6 @@ a:hover {
   border-radius: 16px;
 }
 
-/* 캐러셀 컨테이너 높이 조정 */
 .carousel .relative.h-56,
 [id*="carousel"] .relative.h-56 {
   height: 400px !important;
@@ -136,18 +134,7 @@ a:hover {
   max-width: 100%;
 }
 
-/* 캐러셀 자체 비율 유지 */
-.carousel,
-[id*="carousel"] {
-  aspect-ratio: 3 / 2 !important;
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
-}
-
-/* 상점 소개 모달/팝업 스타일 개선 */
+/* 상점 소개 모달/팝업 스타일 */
 .modal, .popup, .intro-modal,
 [class*="modal"], [class*="popup"], [class*="intro"] {
   background: rgba(13, 10, 8, 0.95) !important;
@@ -189,7 +176,7 @@ a:hover {
   display: none !important;
 }
 
-/* 가격 표시 관련 */
+/* 가격 표시 관련 - 배경 제거 및 골드 텍스트 유지 */
 .price-desc,
 .pricetag-text,
 .pricetag-text span {
