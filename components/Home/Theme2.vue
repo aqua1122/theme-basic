@@ -23,7 +23,7 @@ const siteSettings = {
       {
         title: "",
         desc: "",
-        cover: "/images/tg.ch.jpeg",
+        cover: "/images/tg.trx.jpeg",
         url: "https://t.me/aquabeta_bot",
         titleClass: "telegram-title",
         descClass: "telegram-desc"
@@ -31,7 +31,7 @@ const siteSettings = {
       {
         title: "",
         desc: "",
-        cover: "/images/tg.trx.jpeg",
+        cover: "/images/tg.ch.jpeg",
         url: "https://t.me/ch_aqua",
         titleClass: "telegram-title",
         descClass: "telegram-desc"
