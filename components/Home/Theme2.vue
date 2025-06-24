@@ -7,13 +7,17 @@ import { defineProps } from 'vue'
 const { locale } = useI18n()
 const translate = useNuxtApp().$i18n.t
 
+// 카테고리, SKU 선택 상태 초기화
 const selectedCate = ref({ name: translate('All'), code: 'all' })
 const cates = ref([{ name: translate('All'), code: 'all' }])
 const selectedSKU = useState('SelectedSKU', () => ({}))
+
+// props 및 merchant 초기화
 const props = defineProps(['merchant'])
 const merchant = ref({})
 merchant.value = props.merchant
 
+// 캐러셀 설정
 const siteSettings = {
   carousel: {
     status: "active",
@@ -40,6 +44,7 @@ const siteSettings = {
   }
 }
 
+// 프로젝트 리스트 & 카테고리 셋업
 const projects = merchant.value.projects || []
 
 projects.forEach((project) => {
@@ -67,11 +72,13 @@ projects.forEach((project) => {
   })
 })
 
+// merchant 변경 감지 시 처리 (필요시)
 watch(merchant, () => {
   const merchantInfo = merchant.value
   if (!merchantInfo || Object.keys(merchantInfo).length === 0) return
 })
 
+// 카테고리 변경 함수
 const changeCate = (code) => {
   cates.value.forEach((cate) => {
     if (cate.code === code) {
@@ -80,18 +87,21 @@ const changeCate = (code) => {
   })
 }
 
+// SKU 선택 함수
 const selectSKU = (sku) => {
   selectedSKU.value = sku
 }
 
 onMounted(() => {
-  // 필요시 추가 로직
+  // 추가 로직 필요 시 작성
 })
 </script>
 
 <template>
   <section class="flex justify-center bg-dark-brown text-gold min-h-screen px-4 py-6">
     <div v-if="merchant && Object.keys(merchant).length" class="w-full max-w-screen-lg space-y-6">
+
+      <!-- 상점 소개 및 연락처 -->
       <div class="flex items-center">
         <div>
           <BtnMerchantIntro :intro="descI18n(locale, merchant)" :siteSettings="siteSettings" />
@@ -102,13 +112,17 @@ onMounted(() => {
         </div>
       </div>
 
+      <!-- 캐러셀 (SKU 미선택시) -->
       <ClientOnly v-if="!selectedSKU || Object.keys(selectedSKU).length === 0">
         <div class="rounded-xl shadow-[0_6px_18px_rgba(191,165,89,0.6)] overflow-hidden mb-8 max-h-[320px]">
           <Carousel :siteSettings="siteSettings" />
         </div>
       </ClientOnly>
 
+      <!-- 프로젝트 및 카테고리 목록 -->
       <div v-if="!selectedSKU || Object.keys(selectedSKU).length === 0" id="projects" class="space-y-6">
+
+        <!-- 카테고리 버튼 리스트 (가로 스크롤 및 숨김 처리) -->
         <div class="space-x-2 overflow-x-auto scrollbar-hide">
           <button
             v-for="cate in cates"
@@ -121,6 +135,7 @@ onMounted(() => {
           </button>
         </div>
 
+        <!-- 프로젝트 상세 -->
         <div class="space-y-6">
           <template v-for="project in projects" :key="project.id">
             <template v-if="['DIGITAL', 'MANUAL', 'LICENSE', 'GROUP', 'VPN'].includes(project.type) && project.skus.length > 0 && ['all', project.slug].includes(selectedCate.code)">
@@ -221,14 +236,17 @@ onMounted(() => {
             </template>
           </template>
         </div>
+
         <EmptyContent v-if="projects.length === 0" class="pt-40">{{ $t('No_Skus') }}</EmptyContent>
       </div>
 
+      <!-- SKU 선택 시 주문 컴포넌트 -->
       <div v-else>
         <PlaceOrder />
       </div>
     </div>
 
+    <!-- merchant 데이터 없을 때 로딩 -->
     <div v-else class="flex items-center justify-center pt-40">
       <span class="loading loading-infinity loading-lg mt-40"></span>
     </div>
