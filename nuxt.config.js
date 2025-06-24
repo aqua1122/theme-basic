@@ -1,14 +1,13 @@
-// nuxt.config.js
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default {
   ssr: true,
   devtools: { enabled: true },
   runtimeConfig: {
-    idatariverMerchantSecret: '',
+    idatariverMerchantSecret: process.env.IDATARIVER_MERCHANT_SECRET || '',
     public: {
-      idatariver: 'https://www.idatariver.com',
-      idatariverServer: 'https://open.idatariver.com',
+      idatariver: process.env.IDATARIVER_URL || 'https://www.idatariver.com',
+      idatariverServer: process.env.IDATARIVER_SERVER_URL || 'https://open.idatariver.com',
       apiEncryptKey: 'Powered By iDataRiver.com',
     },
   },
