@@ -101,12 +101,14 @@ a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carousel img:hover,
-.carousel figure img:hover,
-[id*="carousel"] img:hover,
-[data-carousel] img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(218, 165, 32, 0.8);
+.carousel,
+[id*="carousel"] {
+  aspect-ratio: 3 / 2 !important;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.55);
 }
 
 /* 캐러셀 배경 설정 */
