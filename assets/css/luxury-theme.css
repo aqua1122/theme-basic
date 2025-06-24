@@ -31,7 +31,8 @@ td, th {
 /* 헤딩 및 기본 텍스트 */
 h1, h2, h3, h4, h5, h6, p, span, label, a {
   color: #d4af37 !important;
-  text-shadow:
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.6) !important;
+}
 
 /* 버튼 스타일 */
 button, .btn {
