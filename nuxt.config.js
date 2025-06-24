@@ -29,8 +29,10 @@ export default {
     '~/assets/css/luxury-theme.css'  // 커스텀 테마 CSS 추가
   ],
   nitro: {
+    compatibilityDate: '2025-06-25',
     compressPublicAssets: true,
   },
+}
   i18n: {
     vueI18n: './i18n.config.js', 
     locales: [
