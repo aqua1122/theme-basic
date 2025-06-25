@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt/config'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineNuxtConfig({
