@@ -28,8 +28,14 @@ export default {
     '~/assets/css/luxury-theme.css'  // 커스텀 테마 CSS 추가
   ],
   nitro: {
-    compatibilityDate: '2025-06-25',
-    compressPublicAssets: true,
+  preset: 'vercel-edge',
+  storage: {
+    data: {
+      driver: 'vercelKV',
+    }
+  },
+  compatibilityDate: '2025-06-25',
+  compressPublicAssets: true,
   },
   vite: {
     plugins: [vueJsx()],
